@@ -31,8 +31,16 @@ namespace EmployeeManagement
                     factor = 2.8m;
                     break;
             }
+            
+            decimal allowance = 0;
+                
+            if (years >= 5 && (employeeType == EmployeeType.SeniorManager || employeeType == EmployeeType.Expert)) {
+                allowance = BASIC_SALARY * 0.2m;
+            } else if (years > 3) {
+                allowance = BASIC_SALARY * 0.1m;
+            }
 
-            var salary = BASIC_SALARY * years * factor;
+            var salary = BASIC_SALARY * years * factor + allowance;
 
             return salary;
         }
