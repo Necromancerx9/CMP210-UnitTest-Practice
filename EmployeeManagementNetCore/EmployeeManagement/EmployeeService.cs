@@ -31,12 +31,14 @@ namespace EmployeeManagement
                     factor = 2.8m;
                     break;
             }
-            
+
             decimal allowance = 0;
-                
-            if (years >= 5 && (employeeType == EmployeeType.SeniorManager || employeeType == EmployeeType.Expert)) {
+
+            if (years >= 5 && (employeeType == EmployeeType.SeniorManager || employeeType == EmployeeType.Expert))
+            {
                 allowance = BASIC_SALARY * 0.2m;
-            } else if (years > 3) {
+            } else if (years > 3)
+            {
                 allowance = BASIC_SALARY * 0.1m;
             }
 
